@@ -1,0 +1,128 @@
+<div id="wrapper-600">
+
+  <ul class="accordion">
+
+    <li id="one3">
+
+      <a href="#one3">SAT<span>+</span></a>
+
+      <div *ng-for="#s of sat1" class="sub-menu2">
+        <br />
+        <form>
+          <label>Date:</label>
+          <select [(ng-model)]="s.month">
+            <option *ng-for="#m of months" value="{{m.value}}">{{m.name}}</option>
+          </select>
+          <select [(ng-model)]="s.year">
+            <option *ng-for="#y of years" value="{{y}}">{{y}}</option>
+          </select>
+          <a (click)="removeSat(s.id)">remove</a>
+          <br />
+
+          <label>Total Score:</label> {{s.getTotalScore()}}
+          <br />
+
+          <label>Reading:</label>
+          <input type="text" value="{{s.readingScore}}" [(ng-model)]="s.readingScore">
+          <br />
+
+          <label>Writing:</label>
+          <input type="text" value="{{s.writingScore}}" [(ng-model)]="s.writingScore">
+          <br />
+
+          <label>Maths:</label>
+          <input type="text" value="{{s.mathsScore}}" [(ng-model)]="s.mathsScore">
+          <br />
+
+        </form>
+      </div>
+      <div class="add-button"><button (click)="addSat()">add</button></div>
+    </li>
+
+    <li id="two3">
+
+      <a href="#two3">ACT<span>+</span></a>
+
+      <div *ng-for="#a of act" class="sub-menu1">
+        <br />
+        <form>
+          <label>Date:</label>
+          <select [(ng-model)]="a.month">
+            <option *ng-for="#m of months" value="{{m.value}}">{{m.name}}</option>
+          </select>
+          <select [(ng-model)]="a.year">
+            <option *ng-for="#y of years" value="{{y}}">{{y}}</option>
+          </select>
+          <div (click)="removeAct(a.id)">remove</div>
+          <br />
+
+          <label>Total Score:</label> {{a.getTotalScore()}}
+          <br />
+
+          <label>English:</label>
+          <input type="text" value="{{a.englishScore}}" [(ng-model)]="a.englishScore">
+          <br />
+
+          <label>Reasoning:</label>
+          <input type="text" value="{{a.reasoningScore}}" [(ng-model)]="a.reasoningScore">
+          <br />
+
+          <label>Science:</label>
+          <input type="text" value="{{a.scienceScore}}" [(ng-model)]="a.scienceScore">
+          <br />
+
+          <label>Maths:</label>
+          <input type="text" value="{{a.mathsScore}}" [(ng-model)]="a.mathsScore">
+          <br />
+
+        </form>
+      </div>
+      <div class="add-button"><button (click)="addAct()">add</button></div>
+
+    </li>
+
+    <li id="three3">
+
+      <a href="#three3">TOEFL<span>+</span></a>
+
+      <div *ng-for="#t of toefl" class="sub-menu1">
+        <br />
+        <form>
+          <label>Date:</label>
+          <select [(ng-model)]="t.month">
+            <option *ng-for="#m of months" value="{{m.value}}">{{m.name}}</option>
+          </select>
+          <select [(ng-model)]="t.year">
+            <option *ng-for="#y of years" value="{{y}}">{{y}}</option>
+          </select>
+          <div (click)="removeToefl(t.id)">remove</div>
+          <br />
+
+          <label>Total Score:</label> {{t.getTotalScore()}}
+          <br />
+
+          <label>Reading:</label>
+          <input type="text" value="{{t.readingScore}}" [(ng-model)]="t.readingScore">
+          <br />
+
+          <label>Writing:</label>
+          <input type="text" value="{{t.writingScore}}" [(ng-model)]="t.writingScore">
+          <br />
+
+          <label>Listening:</label>
+          <input type="text" value="{{t.listeningScore}}" [(ng-model)]="t.listeningScore">
+          <br />
+
+          <label>Speaking:</label>
+          <input type="text" value="{{t.speakingScore}}" [(ng-model)]="t.speakingScore">
+          <br />
+
+        </form>
+      </div>
+      <div class="add-button"><button (click)="addToefl()">add</button></div>
+
+    </li>
+
+  </ul>
+
+</div>

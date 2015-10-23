@@ -1,0 +1,19 @@
+<html>
+<head>
+  <title>Angular 2 QuickStart</title>
+  <script src="./lib/http_code.angularjs.org_tools_system.js"></script>
+  <script src="./lib/http_code.angularjs.org_tools_typescript.js"></script>
+  <script src="./lib/http_code.angularjs.org_2.0.0-alpha.44_angular2.dev.js"></script>
+  <link rel="stylesheet" href="./lib/accordionmenu.css" type="text/css" media="screen" />
+  <script>
+    System.config({
+      transpiler: 'typescript',
+      typescriptOptions: { emitDecoratorMetadata: true }
+    });
+    System.import('./app/app.ts');
+  </script>
+</head>
+<body>
+<my-app></my-app>
+</body>
+</html>

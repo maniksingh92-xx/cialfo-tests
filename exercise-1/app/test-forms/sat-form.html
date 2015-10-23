@@ -1,0 +1,20 @@
+<form [ng-form-model]="partiesForm" #f="form">
+  <label>Month</label>
+  <select ng-control="month">
+    <option *ng-for="#m of months" value="{{m.value}}">{{m.name}}</option>
+  </select>
+
+  <label>Year</label>
+  <select ng-control="year">
+    <option *ng-for="#y of years" value="{{y}}">{{y}}</option>
+  </select>
+
+
+  <label>Year</label>
+  <input type="text" ng-control="name">
+  <label>Description</label>
+  <input type="text" ng-control="description">
+  <label>Location</label>
+  <input type="text" ng-control="location">
+  <button>Add</button>
+</form>
