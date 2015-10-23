@@ -82,12 +82,17 @@ class MainComponent {
     }
 
     this.sat1.push(new SAT1(this.next_id++,this.d.getMonth(),this.d.getFullYear()));
-    this.act.push(new ACT(this.next_id++,this.d.getMonth(),this.d.getFullYear()));
-    this.toefl.push(new TOEFL(this.next_id++,this.d.getMonth(),this.d.getFullYear()));
+    /*this.act.push(new ACT(this.next_id++,this.d.getMonth(),this.d.getFullYear()));
+    this.toefl.push(new TOEFL(this.next_id++,this.d.getMonth(),this.d.getFullYear()));*/
+    console.log(this.getTestCount());
+  }
+
+  getTestCount() : number {
+    return parseInt(this.sat1.length) + parseInt(this.act.length) + parseInt(this.toefl.length);
   }
 
   removeSat(id: number) {
-    if(this.sat1.length>1) {
+    if(this.getTestCount()>1) {
       this.sat1 = this.sat1.filter(function (obj) {
         return obj.id != id;
       })
@@ -99,7 +104,7 @@ class MainComponent {
   }
 
   removeAct(id: number) {
-    if(this.act.length>1) {
+    if(this.getTestCount()>1) {
       this.act = this.act.filter(function (obj) {
         return obj.id != id;
       })
@@ -111,7 +116,7 @@ class MainComponent {
   }
 
   removeToefl(id: number) {
-    if(this.toefl.length>1) {
+    if(this.getTestCount()>1) {
       this.toefl = this.toefl.filter(function (obj) {
         return obj.id != id;
       })
