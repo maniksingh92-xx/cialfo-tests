@@ -16,7 +16,6 @@
           <select [(ng-model)]="s.year">
             <option *ng-for="#y of years" value="{{y}}">{{y}}</option>
           </select>
-          <a (click)="removeSat(s.id)">remove</a>
           <br />
 
           <label>Total Score:</label> {{s.getTotalScore()}}
@@ -35,6 +34,7 @@
           <br />
 
         </form>
+        <button (click)="removeSat(s.id)">remove</button>
       </div>
       <div class="add-button"><button (click)="addSat()">add</button></div>
     </li>
@@ -53,7 +53,7 @@
           <select [(ng-model)]="a.year">
             <option *ng-for="#y of years" value="{{y}}">{{y}}</option>
           </select>
-          <div (click)="removeAct(a.id)">remove</div>
+
           <br />
 
           <label>Total Score:</label> {{a.getTotalScore()}}
@@ -76,6 +76,7 @@
           <br />
 
         </form>
+        <button (click)="removeAct(a.id)">remove</button>
       </div>
       <div class="add-button"><button (click)="addAct()">add</button></div>
 
@@ -95,7 +96,7 @@
           <select [(ng-model)]="t.year">
             <option *ng-for="#y of years" value="{{y}}">{{y}}</option>
           </select>
-          <div (click)="removeToefl(t.id)">remove</div>
+
           <br />
 
           <label>Total Score:</label> {{t.getTotalScore()}}
@@ -118,6 +119,7 @@
           <br />
 
         </form>
+        <button (click)="removeToefl(t.id)">remove</button>
       </div>
       <div class="add-button"><button (click)="addToefl()">add</button></div>
 
