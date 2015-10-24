@@ -229,6 +229,20 @@
       }
     }
   }
+  
+  function rain() {
+    "use strict";
+    var group = new Group();
+
+    for (var i = 0; i < 20; i++){
+      placedSymbol[i] = symbol.place();
+      placedSymbol[i].position = Point.random() * view.size;
+      group.addChild(placedSymbol[i]);
+    }
+    window.setTimeout(function() {
+      group.visible = false;
+    }, 100);
+  }
 
   function shuffleArray(array) {
     for (var i = array.length - 1; i > 0; i--) {
@@ -238,23 +252,6 @@
       array[j] = temp;
     }
     return array;
-  }
-
-  function rain() {
-    "use strict";
-    var group = new Group();
-
-    //make 150 symbols (drops), place them at random x position
-    for (var i = 0; i < 20; i++){
-      placedSymbol[i] = symbol.place();
-      placedSymbol[i].position = Point.random() * view.size;
-      group.addChild(placedSymbol[i]);
-    }
-    window.setTimeout(function() {
-      group.visible = false;
-    }, 100);
-
-
   }
 
 })();
